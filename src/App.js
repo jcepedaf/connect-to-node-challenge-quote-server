@@ -19,11 +19,20 @@ function App() {
 
 
   return (
-    <div className="input-group p-5">
-      <input type="text" className="form-control m-5" placeholder="Search Term" onChange={(e)=> setSearchInput(e.target.value)} />
-      <button className ="btn btn-outline-secondary m-5" type ="button" onClick={selectView}>Search</button>
-      <button className ="btn btn-outline-secondary m-5" type ="button" onClick={randomView}>Random</button>
-      {searchRandom? <div><h1>{searchRandom.quote}</h1><h1>{searchRandom.author}</h1></div> : null}
+    <div className="jumbotron container form-group">
+      
+      
+      
+
+      <div class="input-group mb-3">
+    <input type="text" className="form-control" placeholder="Search Term" onChange={(e)=> setSearchInput(e.target.value)} />
+  <div class="input-group-append">
+    <button  type ="button" class="btn btn-primary" onClick={selectView}>Search</button>
+    <button  type ="button" class="btn btn-danger" onClick={randomView}>Random</button>
+  </div>
+</div>
+
+      {searchRandom? <div><h3>{searchRandom.quote}</h3><h5>{searchRandom.author}</h5></div> : null}
     </div>
   );
 }
